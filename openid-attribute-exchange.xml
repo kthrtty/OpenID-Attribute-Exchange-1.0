@@ -213,7 +213,7 @@
               a user might have a work persona and a home persona.
               -->
             </t>
-            <t hangText="OpenIDプロバイダ">
+            <t hangText="OpenID プロバイダ">
               "OP" または "Server" ともいう。エンドユーザが識別子を管理しているというアサーション (assertion) を得るために RP が依存する OpenID 認証サーバ。
               <!--
               Also called "OP" or "Server". An OpenID Authentication
@@ -265,7 +265,7 @@ openid.ns.<extension_alias>=http://openid.net/srv/ax/1.0
       Document=URL=Message?
       -->
       <t>
-        Attribute Exchange サービスの拡張仕様は、"http://openid.net/srv/ax/1.0" の URI によって識別できる。このURIは名前空間宣言の拡張で規定されている必要がある (MUST)。
+        Attribute Exchange サービスの拡張仕様は、"http://openid.net/srv/ax/1.0" の URI によって識別できる。この URI は名前空間宣言の拡張で規定されている必要がある (MUST)。
         <!--
         The attribute exchange service extension is identified by the
         URI "&axns;". This URI MUST be specified in the extension
@@ -273,7 +273,7 @@ openid.ns.<extension_alias>=http://openid.net/srv/ax/1.0
         -->
       </t>
       <t>
-        属性とは、一意の URI で識別される個人のユーザー情報の単位のこと。それはあらゆる種類の情報を参照することがある。定義されている属性のタイプについては <xref target="OpenID.axschema"/> を参照すること。
+        属性とは、一意の URI で識別される個人のユーザー情報の単位のことであり、あらゆる種類の情報を参照することがある。定義されている属性のタイプについては <xref target="OpenID.axschema"/> を参照すること。
         <!--
         An attribute is a unit of personal identity information that
         is identified by a unique URI. It may refer to any kind of
@@ -282,7 +282,7 @@ openid.ns.<extension_alias>=http://openid.net/srv/ax/1.0
         -->
       </t>
       <t>
-        この拡張仕様では属性を送るために、fetch (<xref target="fetch"/> を参照) とstore (<xref target="store"/> を参照) の2つのメッセージタイプを定義している。Fetch は OpenID プロバイダから 属性情報を取得し、一方で store では OpenID Provider 上の属性情報を更新する。これら2つのリライングパーティからのメッセージは、OpenID Authentication のプロトコルに従いユーザーエージェントを経由して OpenID プロバイダへ送られる。
+        この拡張仕様では属性を送るために、fetch (<xref target="fetch"/> を参照) と store (<xref target="store"/> を参照) の2つのメッセージタイプを定義している。Fetch は OP から属性情報を取得し、一方で store では OP 上の属性情報を更新する。これら2つのリライングパーティからのメッセージは、OpenID Authentication のプロトコルに従いユーザーエージェントを経由して OP へ送られる。
         <!--
         This service extension defines two message types for
         transferring attributes: fetch (see <xref target="fetch"/>)
@@ -325,7 +325,7 @@ openid.ns.<extension_alias>=http://openid.net/srv/ax/1.0
       </t>
       <section title="対象識別子" anchor="identifier-definition">
         <t>
-          属性のセットのための識別子。URIである必要がある (MUST)。対象識別子は、認証の最後のメッセージに含まれるエンドユーザー識別子に準じてる。言い換えると、Attribute Exchange でのユーザー属性の一部はエンドユーザーの認証の一部に相当するといえる。この対象識別子は Attribute Exchange には含まれない。
+          属性のセットのための識別子。URI である必要がある (MUST)。対象識別子は、認証の最後のメッセージに含まれるエンドユーザー識別子に準じてる。言い換えると、Attribute Exchange でのユーザー属性の一部はエンドユーザーの認証の一部に相当するといえる。この対象識別子は Attribute Exchange には含まれない。
           <!--
           An identifier for a set of attributes. It MUST be a URI. The
           subject identifier corresponds to the end-user identifier in
@@ -346,7 +346,7 @@ openid.ns.<extension_alias>=http://openid.net/srv/ax/1.0
           -->
         </t>
         <t>
-          属性タイプ識別子 URI は、それをプロパティの記述を参照するために取得することによって解決できるべきである。OpenID Provider は新しいまたは未知の属性タイプのメタデータを取得して参照することで、ユーザーが属性を提供することを動的に支援することができる。
+          属性タイプ識別子 URI は、それをプロパティの記述を参照するために取得することによって解決できるべきである。OP は新しいまたは未知の属性タイプのメタデータを取得して参照することで、ユーザーが属性を提供することを動的に支援することができる。
           <!--
           If an attribute type identifier URI can be resolved then it
           MAY be dereferenced to retrieve a description of the
@@ -367,7 +367,7 @@ openid.ns.<extension_alias>=http://openid.net/srv/ax/1.0
           -->
         </t>
         <t>
-          <xref target="OpenID.axschema"/> にそれらの定義方法や新しい属性タイプ URI、また OpenID Provider が属性タイプに紐付くメタデータのスキーマ、データ形式の概略を掲載しているので参照すること。
+          <xref target="OpenID.axschema"/> にそれらの定義方法や新しい属性タイプ URI、また OP が属性タイプに紐付くメタデータのスキーマ、データ形式の概略を掲載しているので参照すること。
           <!--
           <xref target="OpenID.axschema"/> outlines an example method
           of defining new attribute type URIs, and also provides a set
@@ -379,7 +379,7 @@ openid.ns.<extension_alias>=http://openid.net/srv/ax/1.0
       </section>
       <section title="属性値" anchor="attribute-value-definition">
         <t>
-          属性値は <xref target="RFC3629">UTF-8</xref> の文字列である必要がある (MUST)。データ形式については <xref target="OpenID.authentication-2.0"/> プロトコルで定義されている内容に従い、属性値は改行を含んではならない (MUST NOT) (UCSコード10, &quot;\n&quot;)。
+          属性値は <xref target="RFC3629">UTF-8</xref> の文字列である必要がある (MUST)。データ形式については <xref target="OpenID.authentication-2.0"/> プロトコルで定義されている内容に従い、属性値は改行 (UCSコード10, &quot;\n&quot;) を含んではならない (MUST NOT)。
           <!--
           A attribute value MUST be a <xref target="RFC3629">UTF-8</xref>
           string. In order to comply with the data formats defined by
@@ -389,7 +389,7 @@ openid.ns.<extension_alias>=http://openid.net/srv/ax/1.0
           -->
         </t>
         <t>
-          OpenID Attribute Exchange はどんな種類のデータでも送信することができる。もしデータに改行を含み、UTF-8 でないまたはそれを Relying Party が強く望む場合は改行を含まない UTF-8 の文字列にエンコードしなければならない (MUST)。
+          OpenID Attribute Exchange はどんな種類のデータでも送信することができる。もしデータに改行を含んだり、UTF-8 文字列でない、または送信者がそう望む場合は、改行を含まない UTF-8 の文字列にエンコードしなければならない (MUST)。
           <!--
           OpenID Attribute Exchange can be used to transfer any kind
           of data. If the data contains newlines, is not a UTF-8 string
@@ -423,7 +423,7 @@ openid.ns.<extension_alias>=http://openid.net/srv/ax/1.0
     </section>
     <section title="ディスカバリー">
       <t>
-        ディスカバリーは、<xref target="OpenID.authentication-2.0"/> に記載されているしくみに則って、Attribue Exhchange サービスの拡張仕様により実現される。Attribute Exchange の名前空間 "&axns;" は、XRDS discovery ドキュメントのなかの &lt;xrd:Type&gt; の子要素である &lt;xrd:Service&gt; 要素でリストされるべきである。
+        Attribute Exchange サービス拡張のディスカバリーは、<xref target="OpenID.authentication-2.0"/> に記載されている方法により実現される。Attribute Exchange の名前空間 "&axns;" は、XRDS discovery ドキュメントのなかの &lt;xrd:Type&gt; の子要素である &lt;xrd:Service&gt; 要素でリストされるべきである (SHOULD)。
         <!--
         Discovery of the attribute exchange service extension is
         achieved via the mechanism described in <xref
@@ -436,7 +436,7 @@ openid.ns.<extension_alias>=http://openid.net/srv/ax/1.0
     </section>
     <section anchor="fetch" title="フェッチメッセージ">
       <t>
-        フェッチメッセージは個人の属性情報を OP から取得するのに使用されます。
+        フェッチメッセージは個人の属性情報を OP から取得するのに使用される。
         <!--
         The fetch message is used to retrieve personal identity
         attributes from an OpenID Provider.
@@ -444,7 +444,7 @@ openid.ns.<extension_alias>=http://openid.net/srv/ax/1.0
       </t>
       <section anchor="fetch_request" title="フェッチ要求形式">
         <t>
-          以下のリクエストフィールドのうち openid.ax.mode 以外はオプション (OPTIONAL) だが、openid.ax.required あるいは opened.ax.if_available のどちらかは必ずリクエストに含めなければならない (MUST)。また、openid.ax.required あるいは openid.ax.if_available のパラメータ内のどの属性エイリアスも紐付いた openid.ax.type.&lt;alias&gt;パラメータを保持しなければならない (MUST)。属性エイリアスの長さは少なくとも32文字までサポートされていなければならない (MUST)。
+          以下のリクエストフィールドのうち "openid.ax.mode" 以外はオプション (OPTIONAL) だが、"openid.ax.required" あるいは "opened.ax.if_available" のどちらかは必ずリクエストに含めなければならない (MUST)。また、"openid.ax.required" あるいは "openid.ax.if_available" のパラメータ内のどの属性エイリアスも紐付いた "openid.ax.type.&lt;alias&gt;" パラメータを保持しなければならない (MUST)。属性エイリアスの長さは少なくとも32文字までサポートされていなければならない (MUST)。
           <!--
           With the exception of "openid.ax.mode", all of the following
           request fields are OPTIONAL, though at least one of
@@ -457,7 +457,7 @@ openid.ns.<extension_alias>=http://openid.net/srv/ax/1.0
           -->
         </t>
         <t>
-          openid.ax.required あるいは openid.ax.if_available ディレクティブ内の複数の属性エイリアスはカンマ区切りで記述される。
+          "openid.ax.required" あるいは "openid.ax.if_available" ディレクティブ内の複数の属性エイリアスはカンマ区切りで記述される。
           <!--
           Multiple attribute aliases in the "openid.ax.required" and
           "openid.ax.if_available" directives are separated with a
@@ -469,7 +469,7 @@ openid.ns.<extension_alias>=http://openid.net/srv/ax/1.0
             <t hangText="openid.ax.mode">
               <list style="empty">
                 <t>
-                  値: "fetch_request" (必須 (REQUIRED))
+                  必須 (REQUIRED)。値: "fetch_request"
                   <!--
                   REQUIRED. Value: "fetch_request".
                   -->
@@ -487,7 +487,7 @@ openid.ns.<extension_alias>=http://openid.net/srv/ax/1.0
                   -->
                 </t>
                 <t>
-                  属性エイリアスは <xref target="OpenID.authentication-2.0"/> のデータフォーマット/プロトコルメッセージの項で指定されているように改行やコロンをを含んではならなず (MUST NOT)、またカンマやピリオドも含んではならない (MUST NOT)。
+                  属性エイリアスは <xref target="OpenID.authentication-2.0"/> のデータフォーマット/プロトコルメッセージの項で指定されているように改行やコロンを含んではならなず (MUST NOT)、またカンマ (",") やピリオド (".") も含んではならない (MUST NOT)。
                   <!--
                   Attribute aliases MUST NOT contain newline and colon characters,
                   as specified in the Data Formats / Protocol Messages section of
@@ -500,7 +500,7 @@ openid.ns.<extension_alias>=http://openid.net/srv/ax/1.0
             <t hangText="openid.ax.required">
               <list style="empty">
                 <t>
-                  値:属性エイリアス、もしくはopenid.ax.type.&lt;alias&gt; パラメータで定義された URI と紐付いたエイリアスのリスト。複数の属性のエイリアスは "," で区切られる。
+                  値: 属性エイリアス、もしくは "openid.ax.type.&lt;alias&gt;" パラメータで定義された URI と紐付いたエイリアスのリスト。複数の属性のエイリアスはコンマ (",") で区切られる。
                   <!--
                   Value: an attribute alias, or a list of aliases
                   corresponding to the URIs defined by
@@ -509,7 +509,7 @@ openid.ns.<extension_alias>=http://openid.net/srv/ax/1.0
                   -->
                 </t>
                 <t>
-                  このフィールドを使用して属性情報のリクエストを送信することで、RP が OP に特定の機能の提供を要求していることを伝え、ユーザーがどの属性を公開するか決定する手助けをするために OP によって使用されるべきである。RP の要求は OP によって強制されるべきではない。
+                  このフィールドを使用して属性情報のリクエストを送信することで、RP は OP に特定の機能の提供を要求していることを伝えることができる。OP はユーザーがどの属性を公開するか決定する際に、その情報を用いて支援を行うべきである。RP の要求は OP によって強制されるべきではない。
                   <!--
                   By requesting attributes using this field, a hint is sent
                   to the OP about the RP's requirements for offering certain
@@ -531,7 +531,7 @@ openid.ns.<extension_alias>=http://openid.net/srv/ax/1.0
             <t hangText="openid.ax.if_available">
               <list style="empty">
                 <t>
-                  値: 属性エイリアス、もしくは openid.ax.type.&lt;alias&gt; パラメータで定義された URI と関連したエイリアスのリスト。複数の属性のエイリアスは "," で区切られる。
+                  値: 属性エイリアス、もしくは "openid.ax.type.&lt;alias&gt;" パラメータで定義された URI と関連したエイリアスのリスト。複数の属性のエイリアスはコンマ (",") で区切られる。
                   <!--
                   Value: an attribute alias, or a list of aliases
                   corresponding to the URIs defined by
@@ -590,7 +590,7 @@ openid.ns.<extension_alias>=http://openid.net/srv/ax/1.0
                   -->
                 </t>
                 <t>
-                  openid.ax.update_url フィールドの値は根底の仕様であるフェッチ応答の更新の OpenID 認証ポジティブアサーションの openid.return_to の値として使用されなければならない (MUST)。
+                  "openid.ax.update_url" フィールドの値は根底の仕様であるフェッチ応答の更新の OpenID 認証ポジティブアサーションの "openid.return_to" の値として使用されなければならない (MUST)。
                   <!--
                   The value of the "openid.ax.update_url" field MUST
                   be used as value for "openid.return_to" field of the
@@ -599,7 +599,7 @@ openid.ns.<extension_alias>=http://openid.net/srv/ax/1.0
                   -->
                 </t>
                 <t>
-                  もし openid.realm フィールドが存在する場合、openid.ax.update_url の値はベースの OpenID フェッチ要求メッセージで指定されている realm と照合しなければならない (MUST)。照合ルールは OpenID 認証プロトコルの Realms の項で定められているものと同じである。
+                  もし "openid.realm" フィールドが存在する場合、"openid.ax.update_url" の値はベースの OpenID フェッチ要求メッセージで指定されている realm と照合しなければならない (MUST)。照合ルールは OpenID 認証プロトコルの "Realms" の項で定められているものと同じである。
                   <!--
                   The "openid.ax.update_url" value MUST also match the
                   realm specified in the underlying OpenID message of the
@@ -685,7 +685,7 @@ openid.ax.update_url=http://idconsumer.com/update?transaction_id=a6b5c41
           -->
         </t>
         <t>
-          "openid.ax.mode" を除いて、以下の全ての要求フィールドはオプションである (OPTIONAL) が、openid.ax.value.&lt;alias&gt; パラメータ内に存在するいかなる属性値も "openid.ax.type.&lt;alias&gt;" パラメータと紐付けられていなければならない (MUST)。
+          "openid.ax.mode" を除いて、以下の全ての要求フィールドはオプションである (OPTIONAL) が、"openid.ax.value.&lt;alias&gt;" パラメータ内に存在するいかなる属性値も "openid.ax.type.&lt;alias&gt;" パラメータと紐付けられていなければならない (MUST)。
           <!--
           With the exception of "openid.ax.mode", all of the following
           request fields are OPTIONAL, though any attribute value
@@ -717,7 +717,7 @@ openid.ax.update_url=http://idconsumer.com/update?transaction_id=a6b5c41
             <t hangText="openid.ax.mode">
               <list style="empty">
                 <t>
-                  値: "fetch_response" (必須 (REQUIRED))
+                	必須 (REQUIRED)。値: "fetch_response"
                   <!--
                   REQUIRED. Value: "fetch_response".
                   -->
@@ -736,7 +736,7 @@ openid.ax.update_url=http://idconsumer.com/update?transaction_id=a6b5c41
                   -->
                 </t>
                 <t>
-                  属性エイリアスは <xref target="OpenID.authentication-2.0"/> のデータフォーマット/プロトコルメッセージの項で規定されているように改行やコロンをを含んではならない (MUST NOT)し、カンマやピリオドも含んではならない (MUST NOT)。
+                  属性エイリアスは <xref target="OpenID.authentication-2.0"/> のデータフォーマット/プロトコルメッセージの項で規定されているように改行やコロンを含んではならない (MUST NOT) し、カンマ (",") やピリオド (".") も含んではならない (MUST NOT)。
                   <!--
                   Attribute aliases MUST NOT contain newline and colon characters,
                   as specified in the Data Formats / Protocol Messages section of
@@ -749,7 +749,7 @@ openid.ax.update_url=http://idconsumer.com/update?transaction_id=a6b5c41
             <t hangText="openid.ax.count.&lt;alias&gt;">
               <list style="empty">
                 <t>
-                  &lt;alias&gt; として表される属性のために返却された数値
+                	&lt;alias&gt; で参照される属性値の個数。
                   <!--
                   The number of values returned for the attribute referred
                   to as &lt;alias&gt;.
@@ -760,7 +760,7 @@ openid.ax.update_url=http://idconsumer.com/update?transaction_id=a6b5c41
             <t hangText="openid.ax.value.&lt;alias&gt;">
               <list style="empty">
                 <t>
-                  &lt;alias&gt; として表された属性の値が割り当てられる。このパラメータのフォーマットは "openid.ax.count.&lt;alias&gt;" が送信されていない時に使用されなければならない (MUST)。
+                  &lt;alias&gt; として表された属性の値が割り当てられる。"openid.ax.count.&lt;alias&gt;" が送信されていない時は、このパラメータ形式を使用しなければならない (MUST)。
                   <!--
                   Assigns a value to the attribute referred to as
                   &lt;alias&gt;. This parameter format MUST be used if
@@ -772,7 +772,7 @@ openid.ax.update_url=http://idconsumer.com/update?transaction_id=a6b5c41
             <t hangText="openid.ax.value.&lt;alias&gt;.&lt;number&gt;">
               <list style="empty">
                 <t>
-                  &lt;alias&gt; として表された属性の値が割り当てられる。このパラメータのフォーマットは、"openid.ax.count.&lt;alias&gt;" が送信されて少なくとも1つの値が関連付けれられた属性のために提供されている場合に使用されなければならない (MUST)。
+                  &lt;alias&gt; として表された属性の値が割り当てられる。"openid.ax.count.&lt;alias&gt;" が送信され、少なくとも1つの値が該当する属性値として提供されている場合には、このパラメータ形式を使用しなければならない (MUST)。
                   <!--
                   Assigns a value to the attribute referred to as
                   &lt;alias&gt;. This parameter format MUST be used
@@ -781,7 +781,7 @@ openid.ax.update_url=http://idconsumer.com/update?transaction_id=a6b5c41
                   -->
                 </t>
                 <t>
-                  &lt;number&gt; は1から openid.ax.count&lt;alias&gt; で指定された値までの範囲のインデックスを一意的に識別する。パラメータの数値は openid.ax.count.&lt;alias&gt; で指定された値と同一でなければならない (MUST)。OP はフェッチ応答の際に属性値の並び順を保つ必要はない。
+                  &lt;number&gt; は1から "openid.ax.count.&lt;alias&gt;" で指定された値までの範囲のインデックスを一意的に識別する。パラメータ数は "openid.ax.count.&lt;alias&gt;" で指定された値と同一でなければならない (MUST)。OP はフェッチ応答の際に属性値の並び順を保つ必要はない。
                   <!--
                   The &lt;number&gt; uniquely identifies the index of
                   the value, ranging from one to the value specified by
@@ -797,7 +797,7 @@ openid.ax.update_url=http://idconsumer.com/update?transaction_id=a6b5c41
             <t hangText="openid.ax.update_url">
               <list style="empty">
                 <t>
-                  リクエストで指定された "update_url" を返す。OP が "update_url" パラメータを受け取り属性更新機能に対応していることを意味している場合、OP はフェッチ応答メッセージの一部に update_url パラメータと値を返さなければならない (MUST)。
+                  リクエストで指定された "update_url" を返す。OP が "update_url" パラメータを受け取り、属性更新機能をサポートする意思がある場合、OP はフェッチ応答メッセージの一部に update_url パラメータと値を返さなければならない (MUST)。
                   <!--
                   Returns the "update_url" parameter specified in the
                   request. If the OpenID Provider receives an
@@ -812,7 +812,7 @@ openid.ax.update_url=http://idconsumer.com/update?transaction_id=a6b5c41
           </list>
         </t>
         <t>
-          フェッチ応答メッセージは <xref target="fetch_request"/> の OpenID プロバイダの属性値更新の応答で規定されている "update_url" に送信してもよい
+        	フェッチ応答メッセージは、OP 上での属性値更新に応じて、<xref target="fetch_request"/> で指定された "update_url" に送信されることもある。
           <!--
           A fetch response message may also be sent to the
           "update_url" specified in <xref
@@ -852,7 +852,7 @@ openid.ax.update_url=http://idconsumer.com/update?transaction_id=a6b5c41
     </section>
     <section anchor="store" title="ストアメッセージ">
       <t>
-        ストアメッセージはユーザー情報を OpenID Provider に保存するために使用される。それは RP が OP に対してユーザーに役立つ OP の持つ属性情報を送信する方法を提供し、他の RP へ対しても同様に送信されるようにできる。属性エイリアスは少なくとも32文字までサポートされていなければならない (MUST)。
+        ストアメッセージはユーザー情報を OP に保存するために使用される。RP はこのメッセージを送信することで、自身が持つ属性値を OP に移譲することができる。送信された属性値は他の RP にも同様に送信することができ、ユーザーにとって役立つであろう。属性エイリアスは少なくとも32文字までサポートされていなければならない (MUST)。
         <!--
         The store message is used to store personal identity
         information to the OpenID Provider; it provides the means
@@ -871,7 +871,7 @@ openid.ax.update_url=http://idconsumer.com/update?transaction_id=a6b5c41
       </t>
       <section anchor="store_request" title="ストア要求形式">
         <t>
-          以下のリクエストフィールドのうち openid.ax.mode 以外はオプションである (OPTIONAL)。 "openid.ax.value.&lt;alias&gt;" または "openid.ax.value.&lt;alias&gt;.&lt;number&gt;" で示されるどのエイリアスも、"openid.ax.type" と紐付かなければならない (MUST)。
+          以下のリクエストフィールドのうち "openid.ax.mode" 以外はオプションである (OPTIONAL)。 "openid.ax.value.&lt;alias&gt;" または "openid.ax.value.&lt;alias&gt;.&lt;number&gt;" で示されるどのエイリアスも、"openid.ax.type" と紐付かなければならない (MUST)。
           <!--
           With the exception of "openid.ax.mode", all of the following
           request fields are OPTIONAL. Any alias referred to in a
@@ -885,7 +885,7 @@ openid.ax.update_url=http://idconsumer.com/update?transaction_id=a6b5c41
             <t hangText="openid.ax.mode">
               <list style="empty">
                 <t>
-                  値: "store_request" (必須 (REQUIRED))
+                  必須 (REQUIRED)。値: "store_request"
                   <!--
                   REQUIRED. Value: "store_request".
                   -->
@@ -895,7 +895,7 @@ openid.ax.update_url=http://idconsumer.com/update?transaction_id=a6b5c41
             <t hangText="openid.ax.type.&lt;alias&gt;">
               <list style="empty">
                 <t>
-                  このパラメータの値にはストア要求内の属性のタイプ識別 URI が指定される。&lt;alias&gt; は後に交換される属性を識別するのに使用 される。
+                  このパラメータの値にはストア要求内の属性のタイプ識別 URI が指定される。&lt;alias&gt; は後に交換される属性を識別するのに使用される。
                   <!--
                   The value of this parameter specifies the type identifier
                   URI for an attribute in the sore request.
@@ -904,7 +904,7 @@ openid.ax.update_url=http://idconsumer.com/update?transaction_id=a6b5c41
                   -->
                 </t>
                 <t>
-                  属性エイリアスは <xref target="OpenID.authentication-2.0"/> のデータフォーマット/プロトコルメッセージの項で規定されているように改行やコロンをを含んではならない (MUST NOT) し、カンマやピリオドも含んではならない (MUST NOT)。
+                  属性エイリアスは <xref target="OpenID.authentication-2.0"/> のデータフォーマット/プロトコルメッセージの項で規定されているように改行やコロンを含んではならない (MUST NOT) し、カンマ (",") やピリオド (".") も含んではならない (MUST NOT)。
                   <!--
                   Attribute aliases MUST NOT contain newline and colon characters,
                   as specified in the Data Formats / Protocol Messages section of
@@ -917,7 +917,7 @@ openid.ax.update_url=http://idconsumer.com/update?transaction_id=a6b5c41
             <t hangText="openid.ax.count.&lt;alias&gt;">
               <list style="empty">
                 <t>
-                  &lt;alias&gt; として表される属性のために返却された数値。もし存在する場合は0より大きくなければならない (MUST)。
+                	&lt;alias&gt; で参照される属性値の個数。もし存在する場合は0より大きくなければならない (MUST)。
                   <!--
                   The number of values sent for the attribute referred to
                   as &lt;alias&gt;. If present, it MUST be greater than
@@ -929,7 +929,7 @@ openid.ax.update_url=http://idconsumer.com/update?transaction_id=a6b5c41
             <t hangText="openid.ax.value.&lt;alias&gt;">
               <list style="empty">
                 <t>
-                  &lt;alias&gt; として表された属性の値が割り当てられる。このパラメータ形式は "openid.ax.count.&lt;alias&gt;" が送信されていない時に使用されなければならない (MUST)。
+                  &lt;alias&gt; として表された属性の値が割り当てられる。"openid.ax.count.&lt;alias&gt;" が送信されていない時は、このパラメータ形式を使用しなければならない (MUST)。
                   <!--
                   Assigns a value to the attribute referred to as
                   &lt;alias&gt;. This parameter format MUST be used if
@@ -941,7 +941,7 @@ openid.ax.update_url=http://idconsumer.com/update?transaction_id=a6b5c41
             <t hangText="openid.ax.value.&lt;alias&gt;.&lt;number&gt;">
               <list style="empty">
                 <t>
-                  &lt;alias&gt; として表された属性の値が割り当てられる。&lt;number&gt; は1から openid.ax.count&lt;alias&gt; で指定された値までの範囲の値のインデックスを一意的に識別する。もし　"openid.ax.count.&lt;alias&gt;"　が送信された場合、このパラメータ形式が使用されなければならない　(MUST)。これらのパラメータの数は、"openid.ax.count.&lt;alias&gt;" で指定された値と同じでなければならない (MUST)。
+                  &lt;alias&gt; として表された属性の値が割り当てられる。&lt;number&gt; は1から openid.ax.count&lt;alias&gt; で指定された値までの範囲の値のインデックスを一意的に識別する。"openid.ax.count.&lt;alias&gt;"　が送信された時は、このパラメータ形式を使用しなければならない (MUST)。これらのパラメータの数は、"openid.ax.count.&lt;alias&gt;" で指定された値と同じでなければならない (MUST)。
                   <!--
                   Assigns a value to the attribute referred to as
                   &lt;alias&gt;. The &lt;number&gt; uniquely identifies the
@@ -987,7 +987,7 @@ openid.ax.value.fav_movie.2=Movie2
               <t hangText="openid.ax.mode">
                 <list style="empty">
                 	<t>
-                  	値: "store_response_success" (必須 (REQUIRED))
+                  	必須 (REQUIRED)。値: "store_response_success"
                   </t>
                   <!-- t>
                     REQUIRED. Value: "store_response_success".
@@ -1019,7 +1019,7 @@ openid.ax.mode=store_response_success
             <t hangText="openid.ax.mode">
               <list style="empty">
                 <t>
-                  値: "store_response_failure" (必須 (REQUIRED))
+                  必須 (REQUIRED)。値: "store_response_failure"
                   <!--
                   REQUIRED. Value: "store_response_failure".
                   -->
@@ -1029,7 +1029,7 @@ openid.ax.mode=store_response_success
             <t hangText="openid.ax.error">
               <list style="empty">
                 <t>
-                  オプション (OPTIONAL)。ユーザに見せることを想定した、失敗応答の原因となるエラー条件を表すパラメータ。メッセージのロケールは HTTP メッセージのロケールと一致するべきである。
+                  オプション (OPTIONAL)。ユーザへの通知を想定した、失敗応答の原因となるエラー条件を表すパラメータ。メッセージのロケールは HTTP メッセージのロケールと一致するべきである。
                   <!--
                   OPTIONAL. Parameter describing the error condition
                   leading to the failure response, intended to be
